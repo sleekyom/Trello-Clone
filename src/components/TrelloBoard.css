@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    background-color: aquamarine;
+    padding: 30px;
+    height: 100vh;
+}
+
+.board {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
