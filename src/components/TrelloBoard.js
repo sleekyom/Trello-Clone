@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './TrelloBoard.css';
-import List from './List'
+import List from './List';
+//import Card from './Card';
 
 export class TrelloBoard extends Component {
-    state={
-        board:[
+    state = {
+        board: [
             {
+                id: 1,
                 name: 'Todos',
                 cards: [
                     {
@@ -18,6 +20,7 @@ export class TrelloBoard extends Component {
             },
 
             {
+                id: 2,
                 name: 'In Progress',
                 cards: [
                     {
@@ -26,10 +29,12 @@ export class TrelloBoard extends Component {
                 ]
             },
             {
+                id: 3,
                 name: 'Code Review',
                 cards: []
             },
             {
+                id: 4,
                 name: 'Done',
                 cards: []
             },
@@ -40,8 +45,12 @@ export class TrelloBoard extends Component {
         return (
             <div className='board'>
                 {
-                    this.state.board.filter(list => list.cards.length>0).map(list =>{
-                        return <List listdata={list}/>
+                    // this.state.board.filter(list => list.cards.length>0).map(list =>{
+                    //     return <List listdata={list}/>
+                    // })
+
+                    this.state.board.map(list =>{
+                        return <List key={list.id} listdata={list} />  
                     })
                 }
             </div>
