@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from './Card';
 import './List.css';
 
-export class List extends Component {
-
-    render() {
-        return (
-            <div className="list">
-                {this.props.listdata.name}
-                <Card carditems={this.props.listdata} />
-            </div>
-        )
-    }
+//Using destructuring
+//Switched to functional component because List is a dumb component
+const List = ({listdata}) => {
+    return(
+        <div className="list">
+            {listdata.name}
+            {listdata.cards.map(card => {
+               return <Card carditem={card} />
+            })}
+        </div>
+    )
 }
 
 export default List

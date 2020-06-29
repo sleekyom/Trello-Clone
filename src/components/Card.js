@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import './Card.css';
+import React from 'react';
+import './Card.css'; 
 
-export class Card extends Component {
-    render() {
-        return (
-            <div className="card">
-                {/* {this.props.carditems.cards} */}
-                {console.log(this.props.carditems.cards)}
-            </div>
-        )
-    }
+//Using destructuring
+//Switched to functional component because Card is a dumb component
+const Card = ({carditem}) => {
+    return(
+        <div className="card">
+            {carditem.name}
+        </div>
+    )
 }
 
 export default Card
